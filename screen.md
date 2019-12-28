@@ -10,3 +10,15 @@ To install screen on Ubuntu, we need to run the following command line
 
 ## List running screens
 > screen -ls
+
+## Detach from screen session
+> Ctrl+a + d
+
+## Retach to screen
+> screen -r [screen_name|process_number]
+
+## send command to a screen
+> screen -X -S [screen_name|process_number] [command|e.g quit]
+
+## kill screen window
+>Ctrl+a + k
