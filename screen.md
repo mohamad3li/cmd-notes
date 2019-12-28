@@ -4,3 +4,9 @@ It is a terminal multiplixer for linux. It helps users to have multiple screens 
 ## Installation
 To install screen on Ubuntu, we need to run the following command line
 > apt-get screen
+
+## Start new screen
+> screen [-S screen_name]
+
+## List running screens
+> screen -ls
