@@ -8,3 +8,8 @@ $git config --global core.editor notepad++
 ```console
 $git config --list
 ```
+## Getting help
+```console
+$git help <verb>
+$git help config
+```
