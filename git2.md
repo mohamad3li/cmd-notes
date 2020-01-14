@@ -20,5 +20,6 @@ Git has a number of different transfer protocols you can use.
 Each file in your working directory can be in one of two states: 
 - tracked: files that were in the last snapshot; they can be unmodified, modified, or staged
 - untracked: files in your working directory that were not in your last snapshot and are not in your staging area
-![alt text](https://raw.githubusercontent.com/mohamad3li/notes/master/stages.png)
+![file stages in git](https://raw.githubusercontent.com/mohamad3li/notes/master/stages.jpg)
+
 
