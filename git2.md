@@ -74,4 +74,59 @@ $ git diff #To see what you’ve changed but not yet staged
 $ git diff --staged #To compare your staged changes to your last commit
 ```
 ### Committing Your Changes
+```shell
+$ git commit #to commit
+$ git commit -m "message_to_attach" #to commit with inline message
+$ git commit -a #to add then commit 
+$ git commit [-a -m|-am] "message_to_attch" #to add then commit with inline message
 
+```
+Remember that anything that is still unstaged—any files you have created or modified that you haven’t run git add on since you edited them—won’t go into this commit.
+### Removing Files
+```shell
+$ rm file_name # to remove from working directory
+$ git rm file_name # to stage file removal
+$ git rm file_name -f # to force file removal if the file has been modified and stagged
+$git rm file_name --cached # to keep the file in your working tree but remove it from your staging area
+We can use file_name|directory|glob_pattern as:
+$ git rm log/\*.log
+```
+### Moving Files
+```shell
+$git mv file_from file_to
+This is equivalent to
+$ mv file_from file_to
+$ git rm file_from
+$ git add file_to
+```
+### Viewing the Commit History
+```shell
+$ git log
+$ git log -p -2 # -p(patch) shows the differences and -2 limit entries to 2
+This is very helpful for code review or to quickly browse what happened during a series of commits that a collaborator has added. 
+$ git log --stat #  to see some abbreviated stats for each commit
+$ git log --pretty=oneline
+$ git log --pretty=format:"%h - %an, %ar : %s"  
+#%H Commit hash
+#%h Abbreviated commit hash,
+#%T Tree hash 
+#%t Abbreviated tree hash 
+#%P Parent hash 
+#%p Abbreviated parent hash,
+#%an Author name
+#%ae Author e-mail
+#%ad Author date
+
+$git log --graph #--graph. This option adds a nice little ASCII graph showing your branch and merge history
+```
+|Option |Description|
+|----|----|
+|-p|Show the patch introduced with each commit.|
+|--stat|Show statistics for files modified in each commit.|
+|--shortstat|Display only the changed/insertions/deletions line from the --stat command.|
+|--name-only|Show the list of files modified after the commit information.|
+|--name-status|Show the list of files affected with added/modified/deleted information as well.|
+|--abbrev-commit|Show only the first few characters of the SHA-1 checksum instead of all 40.|
+|--relative-date|Display the date in a relative format (for example, “2 weeks ago”) instead of using the full date format.|
+|--graph|Display an ASCII graph of the branch and merge history beside the log output.|
+|--pretty|Show commits in an alternate format. Options include oneline, short, full, fuller, and format (where you specify your own format).|
