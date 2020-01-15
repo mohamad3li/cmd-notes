@@ -188,9 +188,17 @@ Example
 $ git log --pretty="%h - %s" --author=gitster --since="2008-10-01" --before="2008-11-01" --no-merges -- t/
 ```
 ## Undoing Things
+### Amend Commit
 ```shell
 $ git commit -m 'initial commit'
 $ git add forgotten_file
 $ git commit --amend # to add stages files to the last commit not a new commit
 ```
-
+### Unstaging a Staged File
+```shell
+$ git add .
+$ git reset HEAD file_name # to unstage a stagged file_name
+```
+### Unmodifying a Modified File
+```shell
+$ git checkout -- [file]#recover the file from last commit
