@@ -202,3 +202,52 @@ $ git reset HEAD file_name # to unstage a stagged file_name
 ### Unmodifying a Modified File
 ```shell
 $ git checkout -- [file]#recover the file from last commit
+
+## Working with Remotes
+### Showing Your Remotes
+```shell
+$ git clone https://github.com/schacon/ticgit #to clone remote repo locally. clone automatically adds "origin" remote
+$ git remote # lists the shortnames of each remote handle you’ve specified
+$ git remote -v # shows you the URLs that Git has stored for the shortname to be used when reading and writing to that remote
+```
+### Adding Remote Repositories
+```shell
+$ git remote add [shortname] [url] #will add a remote
+$ git fetch [remote_short_name] #will fetch remote banches locally without merging them. we can merge them or just them output
+```
+Notes:
+- If you have a branch set up to track a remote branch,you can use the git pull command to automatically fetch and then merge a remote branch into your current branch.
+- git clone command automatically sets up your local master branch to track the remote master branch 
+- Running git pull generally fetches data from the server you originally cloned from and automatically tries to merge it into the code you’re currently working on
+### Pushing to Your Remotes
+```shell
+$ git push [remote-name] [branch-name] #  push any commits you’ve done on [branch-name] back up to the server
+$ git push origin master # pushes master branch to the origin remote
+```
+Note:
+If you and someone else clone at the same time and they push upstream and then you push upstream, your push will rightly be rejected. You’ll have to pull down their work first and incorporate it into yours before you’ll be allowed to push.
+### Inspecting a Remote
+```shell
+$ git remote show [remote-name] # to see more information about a particular remote
+$ git remote show origin
+```
+This command shows 
+- which branch is automatically pushed to when you run git push while on certain branches. 
+- which remote branches on the server you don’t yet have, 
+- which remote branches you have that have been removed from the server
+- multiple branches that are automatically merged when you run git pull.
+### Removing and Renaming Remotes
+```
+$ git remote rename [old_short_name] [new_short_name]
+$ git remote rename pb paul
+$ git remote rm paul # to remove remote reference
+```
+
+## Tagging
+Git has the ability to tag specific points in history as being important. Typically people use this functionality to mark release points (v1.0, and so on).
+### Listing Your Tags
+```shell
+$ git tag #lists the tags in alphabetical order
+$ git tag -l <pattern> # list tags matching <pattern>
+$ git tag -l 'v1.8.5*'
+```
